@@ -1,0 +1,3 @@
+# Web search SDKs shared by all four methods.
+tavily-python
+exa-py

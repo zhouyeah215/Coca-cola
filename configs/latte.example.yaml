@@ -1,0 +1,50 @@
+# Copy to latte.local.yaml and set model paths before running.
+paths:
+  train_data_file: data/sft/latte_train.jsonl
+  eval_data_file: null
+  checkpoint_dir: checkpoints/latte
+wandb:
+  enabled: false
+train:
+  epochs: 1
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 4
+  eval_split_ratio: 0.1
+  gradient_checkpointing: true
+  learning_rate: 0.00015
+  learning_rate_end: 0.00005
+  optimizer_type: paged_adamw_8bit
+  seed: 42
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: all-linear
+  keep_last_n_layers: 8
+latent:
+  agent_model_path: /path/to/agent-model
+  compressor_model_path: /path/to/compressor-model
+  agent_max_length: 16384
+  compressor_max_length: 4096
+  compressor_num_hidden_layers: null
+  num_latent_tokens: 128
+  compressor_load_in_4bit: false
+  agent_num_gpus: 1
+  compressor_num_gpus: 1
+  kl_weight: 0.4
+  task_weight: 1.0
+eval:
+  baseline: latent_hf
+  datasets: nq
+  split: test
+  max_questions: 10
+  start_idx: 0
+  max_new_tokens: 1024
+  max_search_limit: 5
+  max_turn: 7
+  top_k: 5
+  search_provider: exa
+  search_api_key: null
+  output_json: outputs/latte/results.json
+  trace_output_dir: outputs/latte/traces
+  print_steps: false
