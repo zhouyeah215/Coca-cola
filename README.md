@@ -1,6 +1,6 @@
-# Latte: Search-o1 检索与上下文压缩
+# Coca-cola: Search-o1 检索与上下文压缩
 
-Latte 面向多轮检索问答，将检索上下文压缩为潜在表示，供模型继续推理。本仓库包含 Latte 的训练与评测代码，以及 Vanilla、LLMSummary 和 LLMLingua 三种基线方法。
+Coca-cola 面向多轮检索问答，将检索上下文压缩为潜在表示，供模型继续推理。本仓库包含 Coca-cola 的训练与评测代码，以及 Vanilla、LLMSummary 和 LLMLingua 三种基线方法。
 
 ## 支持的方法
 
@@ -9,7 +9,7 @@ Latte 面向多轮检索问答，将检索上下文压缩为潜在表示，供�
 | Vanilla | 直接使用检索结果 |
 | LLMSummary | 使用语言模型生成文本摘要 |
 | LLMLingua | 使用 LongLLMLingua 压缩文本 |
-| Latte | 将上下文压缩为潜在表示 |
+| Coca-cola | 将上下文压缩为潜在表示 |
 
 ## 快速开始
 
@@ -36,4 +36,4 @@ python scripts/summarize_baseline.py \
 
 - [环境安装与数据准备](docs/INSTALL.md)
 - [各方法运行与评测](docs/METHODS.md)
-- [Latte 数据准备与训练](docs/TRAINING.md)
+- [Coca-cola 数据准备与训练](docs/TRAINING.md)
